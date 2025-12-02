@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="../css/portifolio-sites.css" />
   </head>
   <body>
+    <div id="particles-bg"></div>
     <!-- Navbar simples reaproveitando o estilo -->
     <header class="navbar">
       <div class="logo">Tatiane Oliveira</div>
       <nav class="nav-links">
-        <a href="../../index.html">Voltar ao site</a>
+        <a href="../../index.html" class="btn-contato">Voltar ao site</a>
       </nav>
+      
       <button class="menu-toggle" aria-label="Abrir menu">☰</button>
     </header>
 
@@ -167,5 +169,65 @@
     <button class="back-to-top" aria-label="Voltar ao topo">↑</button>
 
     <script src="../js/portifolio-sites.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", async () => {
+        await tsParticles.load("particles-bg", {
+          fpsLimit: 60,
+          background: {
+            color: "transparent",
+          },
+          particles: {
+            number: {
+              value: 80,
+              density: { enable: true, area: 800 },
+            },
+            color: { value: "#ffffff" },
+            shape: { type: "circle" },
+            opacity: {
+              value: 0.6,
+              random: false,
+            },
+            size: {
+              value: 2,
+              random: { enable: true, minimumValue: 1 },
+            },
+            links: {
+              enable: true,
+              distance: 150,
+              color: "#38bdf8",
+              opacity: 0.4,
+              width: 1,
+            },
+            move: {
+              enable: true,
+              speed: 1.2,
+              direction: "none",
+              random: false,
+              straight: false,
+              outModes: { default: "out" },
+            },
+          },
+          interactivity: {
+            events: {
+              onHover: {
+                enable: true,
+                mode: "repulse",
+              },
+              onClick: {
+                enable: true,
+                mode: "push",
+              },
+              resize: true,
+            },
+            modes: {
+              repulse: { distance: 120, duration: 0.4 },
+              push: { quantity: 3 },
+            },
+          },
+          detectRetina: true,
+        });
+      });
+    </script>
   </body>
 </html>

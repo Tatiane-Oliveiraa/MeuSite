@@ -7,22 +7,20 @@
   padding: 0;
 }
 
+
+
+
 body {
   margin: 0;
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: #0b0f1e;              /* cor base */
-  background-image:
-    radial-gradient(circle at top left, rgba(62, 28, 150, 0.7), transparent 55%),
-    radial-gradient(circle at bottom right, rgba(15, 118, 255, 0.5), transparent 55%),
-    url('assets/img/bg.jpg');        /* sua imagem */
-  background-size: 600px 600px, 600px 600px, cover;
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  background-attachment: fixed;          /* efeito “parallax” leve */
-  background-position: top left, bottom right, center;
+  background-color: #020617; /* algo bem escuro */
   color: #fff;
   line-height: 1.6;
   overflow-x: hidden;
 }
+
+
+
 
 .container {
   max-width: 1200px;

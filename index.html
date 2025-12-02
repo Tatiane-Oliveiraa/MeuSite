@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
+    <div id="particles-bg"></div>
     <!-- Botão voltar ao topo -->
     <button class="back-to-top" aria-label="Voltar ao topo">↑</button>
 
@@ -211,10 +212,7 @@
 
           <article class="projeto-card projeto-card-destaque">
             <div class="projeto-media">
-              <img
-                src="assets/img/3.png"
-                alt="Identidade Visual & Logos"
-              />
+              <img src="assets/img/3.png" alt="Identidade Visual & Logos" />
               <button class="projeto-open" aria-label="Ver projeto">↗</button>
             </div>
             <div class="projeto-content">
@@ -388,5 +386,65 @@
 
     <!-- Script no final -->
     <script src="assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", async () => {
+        await tsParticles.load("particles-bg", {
+          fpsLimit: 60,
+          background: {
+            color: "transparent",
+          },
+          particles: {
+            number: {
+              value: 80,
+              density: { enable: true, area: 800 },
+            },
+            color: { value: "#ffffff" },
+            shape: { type: "circle" },
+            opacity: {
+              value: 0.6,
+              random: false,
+            },
+            size: {
+              value: 2,
+              random: { enable: true, minimumValue: 1 },
+            },
+            links: {
+              enable: true,
+              distance: 150,
+              color: "#38bdf8",
+              opacity: 0.4,
+              width: 1,
+            },
+            move: {
+              enable: true,
+              speed: 1.2,
+              direction: "none",
+              random: false,
+              straight: false,
+              outModes: { default: "out" },
+            },
+          },
+          interactivity: {
+            events: {
+              onHover: {
+                enable: true,
+                mode: "repulse",
+              },
+              onClick: {
+                enable: true,
+                mode: "push",
+              },
+              resize: true,
+            },
+            modes: {
+              repulse: { distance: 120, duration: 0.4 },
+              push: { quantity: 3 },
+            },
+          },
+          detectRetina: true,
+        });
+      });
+    </script>
   </body>
 </html>
