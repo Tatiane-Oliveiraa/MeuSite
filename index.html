@@ -19,15 +19,19 @@
 
     <!-- NAVBAR -->
     <header class="navbar">
-      <div class="logo">Tatiane Oliveira</div>
+      <div class="logo">
+        <a href="index.html"
+          ><img src="assets/icons/logo2.png" alt="Logo"
+        /></a>
+      </div>
       <nav class="nav-links">
         <a href="#hero">Inicio</a>
         <a href="#servicos">Serviços</a>
         <a href="#projetos">Portfólio</a>
         <a href="#sobre">Sobre Mim</a>
         <a href="#contato" class="btn-contato">Contato</a>
-        <button class="menu-toggle" aria-label="Abrir menu">☰</button>
       </nav>
+      <button class="menu-toggle" aria-label="Abrir menu">☰</button>
     </header>
 
     <!-- HERO -->
@@ -261,7 +265,7 @@
           <div class="contato-canais">
             <article class="contato-card contato-card-instagram">
               <div class="contato-card-icon">📷</div>
-              <div>
+              <div onclick="openInstagram()">
                 <h4>Instagram</h4>
                 <p>@devtatianeoliveira</p>
               </div>
@@ -269,11 +273,9 @@
 
             <article class="contato-card contato-card-whatsapp">
               <div class="contato-card-icon">💬</div>
-              <div>
+              <div onclick="openWhatsApp()">
                 <h4>WhatsApp</h4>
-                <p>Fale comigo agora 
-                  <a href="https://wa.me/5521964863905?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20seus%20serviços." target="_blank">Clique aqui</a>
-                </p>
+                <p>Fale comigo agora</p>
               </div>
             </article>
 

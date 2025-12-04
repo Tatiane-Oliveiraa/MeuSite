@@ -3,7 +3,9 @@ const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
 
 menuToggle.addEventListener('click', () => {
+  console.log('Clicou');
   navLinks.classList.toggle('active');
+  console.log(navLinks.classList);
 });
 
 // Scroll suave para todos os links
@@ -117,3 +119,11 @@ document.querySelectorAll('.servico-card, .projeto-card, .skill-card').forEach(e
   el.style.transition = 'all 0.6s ease';
   observer.observe(el);
 });
+
+function openWhatsApp() {
+    window.open('https://wa.me/5521964863905?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20seus%20serviços.', '_blank');
+}
+
+function openInstagram() {
+  window.open('https://www.instagram.com/devtatianeoliveira/', '_blank');
+}

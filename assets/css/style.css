@@ -32,10 +32,11 @@ body {
    NAVBAR
    =========================== */
 .navbar {
+  height: 72px;           /* ajuste o valor que quiser */
+  padding: 0 2rem;        /* tira o padding vertical */
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  justify-content: space-between;
   background: linear-gradient(90deg, #ff6ec4, #7873f5);
   position: fixed;
   top: 0;
@@ -46,14 +47,34 @@ body {
 }
 
 .logo {
-  font-weight: 700;
-  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 110px;     /* menor que 72px da navbar */
+  width: auto;      /* mantém proporção */
+}
+
+
+.logo a:hover img {
+  opacity: 0.7;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
   gap: 2rem;
+}
+
+.nav-links.active {
+  display: flex;
 }
 
 .nav-links a {
@@ -421,6 +442,7 @@ section {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.8rem;
+  grid-template-rows: auto;
 }
 
 /* Card de projeto */
@@ -679,6 +701,7 @@ section {
   background: radial-gradient(circle at left, rgba(15, 23, 42, 0.9), #020617);
   box-shadow: 0 16px 40px rgba(15, 23, 42, 0.9);
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  cursor: pointer;
 }
 
 .contato-card:hover {
@@ -1002,17 +1025,17 @@ section {
   .footer-container {
     grid-template-columns: 1fr 1fr;
   }
+
 }
 
 @media (max-width: 768px) {
   .navbar {
     padding: 1rem;
   }
-
   .nav-links {
     display: none;
     position: fixed;
-    top: 100%;
+    top: 64px;          /* ajuste importante: abaixo da navbar */
     left: 0;
     right: 0;
     background: rgba(15, 15, 15, 0.98);
@@ -1020,15 +1043,13 @@ section {
     flex-direction: column;
     padding: 2rem;
     gap: 1rem;
+    z-index: 2000;      /* fica por cima do conteúdo */
   }
 
   .nav-links.active {
     display: flex;
   }
 
-  .menu-toggle {
-    display: block;
-  }
 
   .hero-buttons {
     flex-direction: column;
@@ -1039,6 +1060,23 @@ section {
     padding: 6rem 1rem 3rem;
     min-height: auto;
   }
+
+  .hero-servicos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  
+  .projetos {
+    padding: 4rem 1rem;
+  }
+
+  .projetos-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+
+
+
 }
 
 @media (max-width: 640px) {
@@ -1061,6 +1099,9 @@ section {
   .footer-container {
     grid-template-columns: 1fr;
   }
+  .menu-toggle {
+    display: block;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1070,5 +1111,8 @@ section {
 
   section {
     padding: 3rem 0;
+  }
+  .menu-toggle {
+    display: block;
   }
 }
